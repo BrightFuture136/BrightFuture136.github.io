@@ -20,8 +20,9 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/photo_2023-12-15_17-13-55.jpg") top right no-repeat;
-  background-size:auto;
+  background: #040404 url("../img/photo_2023-12-15_17-13-55.jpg") top right
+    no-repeat;
+  background-size: auto;
   left: 0;
   right: 0;
   top: 0;
@@ -215,7 +216,7 @@ h6 {
   position: relative;
 }
 
-.navbar li+li {
+.navbar li + li {
   margin-left: 30px;
 }
 
@@ -254,7 +255,7 @@ h6 {
 }
 
 .navbar a:hover:before,
-.navbar li:hover>a:before,
+.navbar li:hover > a:before,
 .navbar .active:before {
   visibility: visible;
   width: 25px;
@@ -263,7 +264,7 @@ h6 {
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
-.navbar li:hover>a {
+.navbar li:hover > a {
   color: #fff;
 }
 
@@ -328,7 +329,7 @@ h6 {
   padding: 12px 20px;
 }
 
-.navbar-mobile li+li {
+.navbar-mobile li + li {
   margin: 0;
 }
 
@@ -969,7 +970,7 @@ section .container {
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.portfolio-details .portfolio-info ul li + li {
   margin-top: 10px;
 }
 
@@ -1066,7 +1067,7 @@ section .container {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br+br {
+.contact .php-email-form .error-message br + br {
   margin-top: 25px;
 }
 
@@ -1134,7 +1135,7 @@ section .container {
   padding: 12px 15px;
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type="submit"] {
   background: #18d26e;
   border: 0;
   padding: 10px 30px;
@@ -1143,7 +1144,7 @@ section .container {
   border-radius: 4px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type="submit"]:hover {
   background: #15bb62;
 }
 
@@ -1187,4 +1188,70 @@ section .container {
 
 .credits a:hover {
   color: #fff;
+}
+
+/* Cookies */
+
+.cookie-consent-banner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 400px;
+  max-width: 90%;
+  border-radius: 20px;
+  background-color: #014855;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  z-index: 1000;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Slide in effect */
+  animation: slideIn 0.5s ease-out forwards; /* Trigger the animation */
+  display: none;
+}
+
+.cookie-consent-banner p {
+  display: inline;
+  margin-right: 10px;
+}
+
+.cookie-button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #003cff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cookie-button:hover {
+  background-color: #009c75;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cookie-consent-banner {
+    width: 80%;
+    right: 10%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cookie-consent-banner {
+    width: 90%;
+    right: 5%;
+  }
+}
+
+/* Keyframes for the slide-in animation */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start 20px below the final position */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End in the final position */
+  }
 }
